@@ -17,3 +17,23 @@ $docker-compose up airflow-init
 $docker-compose up -d
 ```
 
+## For installing apache-airflow in local
+Create a virtual env with pipenv. 
+```
+$pipenv --python=NON_SYSTEM_PYTHON_PATH
+$pipenv shell # activate venv
+$pipenv install apache-airflow
+$pipenv lock # to create pipfile.lock
+```
+
+### Few pipenv commands
+```
+$pipenv -h #to see help
+$pipenv --venv #venv info
+$pipenv --py #py interpreter info
+$pipenv --rm #remove venv from venv dir
+$pipenv requirements
+$pipenv verify # very hash in Pipfile.lock is up-to-date
+$pipenv update #runs lock, then sync
+$pipenv sync #install all pacs in Pipfile.lock
+```
