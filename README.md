@@ -37,3 +37,19 @@ $pipenv verify # very hash in Pipfile.lock is up-to-date
 $pipenv update #runs lock, then sync
 $pipenv sync #install all pacs in Pipfile.lock
 ```
+
+### Installing python dependencies to airflow docker container
+
+We will accomplish this by extending the airflow image.
+Create a docker file in the same directory with docker-compose.yaml and run the command
+```
+$docker build . --tag extended_airflow:latest
+```
+Then update the airflow image reference in docker-compose.yaml
+
+Sometimes the above solution may not work, and dags may show import module error.
+In such case, access the container running airflow scheduler with following
+```
+$docker exec -it scheduler_container_id
+scheduler_container_id$pip install billboard
+```
