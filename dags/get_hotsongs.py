@@ -44,8 +44,9 @@ with DAG(
 
     task3 = BashOperator(
         task_id="third_task",
-        bash_command="echo Hello world, The file is created!!!"
+        bash_command="echo Hello world, The file is created!!!s"
     )
 
     #Task dependency method1
     task1.set_downstream(task2)
+    task2.set_downstream(task3)
