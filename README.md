@@ -51,5 +51,5 @@ Sometimes the above solution may not work, and dags may show import module error
 In such case, access the container running airflow scheduler with following
 ```
 $docker exec -it scheduler_container_id
-scheduler_container_id$pip install billboard
+scheduler_container_id$pip install billboard.py
 ```
